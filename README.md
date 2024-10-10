@@ -1,4 +1,7 @@
 As questões estão respondidas dentro da class Program no arquivo Program.cs.
+Para executar o código, crie uma aplicação console no ambiente .NET e cole todo o conteúdo do arquivo na classe program. 
+Lembre-se de adequar o namespace ao seu projeto console.
+Respondendo as questões:
 1 - A função CalculateFibonacci(int valor) usa o parâmetro para determinar a quantidade de elementos da sequência de fibonacci e avaliar se este parâmetro está presente na sequência. 
 2 - O método VerifyString(string text) avalia se a string passada como argumento contém letra "a" e retorna a quantidade delas caso exista.
 3 - A Função Somar(int num) realiza a operação matemática fornecida no enunciado. 
