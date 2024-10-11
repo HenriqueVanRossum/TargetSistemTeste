@@ -1,10 +1,10 @@
-﻿namespace TargetQuestoes;
+namespace TargetQuestoes;
 
 class Program
 {
     static void Main(string[] args)
     {
-        CalculateFibonacci(13);
+        CalculateFibonacci(4);
         VerifyString("BANANA");
         Soma();
 
@@ -24,26 +24,42 @@ class Program
 
     public static void CalculateFibonacci(int valor)
     {
+        if (valor < 0)
+        {
+            Console.WriteLine("O valor presente na sequência de fibonacci deve ser maior que zero");
+            return;
+        }
         var listFibo = new List<int>();
         int num1 = 0;
         int num2 = 1;
         int aux;
-        if (valor == 1)
+        int qtd;
+        
+        if (valor == 0)
         {
             listFibo.Add(num1);
         }
-        else if (valor == 2)
+        else if (valor == 1)
         {
             listFibo.Add(num2);
         }
         else
         {
-
             listFibo.Add(num1);
             listFibo.Add(num2);
         }
 
-        for (int i = 2; i < valor; i++)
+        if (valor <= 10)
+        {
+            qtd = 10;
+        }
+        else
+        {
+            qtd = valor;
+        }
+
+
+        for (int i = 2; i < qtd; i++)
         {
             aux = num1 + num2;
             num1 = num2;
@@ -55,7 +71,8 @@ class Program
         {
             Console.Write(" " + n);
         }
-        Console.WriteLine();
+        Console.WriteLine(" ...");
+
         if (listFibo.Contains(valor))
         {
             Console.WriteLine($"O valor {valor} está presente na sequencia de Fibonacci");
@@ -68,9 +85,10 @@ class Program
 
     public static void VerifyString(string text)
     {
-        text = text.ToLower();
+
+        string text1 = text.ToLower();
         int cont = 0;
-        foreach (var letter in text)
+        foreach (var letter in text1)
         {
             if (letter == 'a')
             {
@@ -79,7 +97,7 @@ class Program
         }
         if (cont > 0)
         {
-            Console.WriteLine($"A palavra {text} possui {cont} letras a");
+            Console.WriteLine($"A palavra {text} possui {cont} letras \"a\"");
         }
         else
         {
@@ -101,7 +119,5 @@ class Program
         }
         Console.WriteLine($"A soma é {soma}");
     }
-
-
-
 }
+
